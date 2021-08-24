@@ -1,4 +1,4 @@
-package sub
+package server
 
 import (
 	"syscall"

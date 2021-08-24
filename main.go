@@ -1,7 +1,7 @@
 package main
 
 import (
-	"ZheTian/sub"
+	"ZheTian/server"
 	"fmt"
 )
 
@@ -21,6 +21,6 @@ func main() {
 :: ZheTian Powerful remote load and execute ShellCode tool
  //[Version 1.0.0] Github [http://github.com/yqcs/ZheTian]`)
 
-	sub.Execute()
+	server.Execute()
 
 }
