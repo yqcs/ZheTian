@@ -23,7 +23,8 @@
 >fc4883e4f0e8c8000000415141......
 > 
 Java、c、ruby等同理。只需将字节数组里的16进制代码提取出来即可。暂时只支持64位payload
-
+###编译：
+>go build -ldflags "-w -s"  main.go
 ### 注意：使用code字节码加载时必须使用base64加密，否则无法解析！！
 后端使用了base64对读取到的内容进行转码，为了减小流量特征。AES/DES的加密模式太多在未标明的情况下可能导致无法解密失败，故此暂不考虑使用
 ![my-logo.png](https://raw.githubusercontent.com/yqcs/ZheTian/master/images/1.png "my-logo")
