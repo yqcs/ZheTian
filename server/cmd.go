@@ -39,7 +39,7 @@ func init() {
 //Execute 挂载cli，等待执行
 func Execute() {
 	if len(os.Args) <= 1 {
-		fmt.Println("\nRun command: ZheTian -help")
+		fmt.Println("\nRun command: ZheTian -h")
 		return
 	}
 	if err := rootCmd.Execute(); err != nil {

@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d685e1f9-8fce-44fd-8a45-d60094dfd2f9" name="Changes" comment="[*]1.0.2 修复设置自启时逻辑出错；优化异常抛出">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/cmd.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/cmd.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +107,7 @@
       <workItem from="1629969514971" duration="360000" />
       <workItem from="1629970941055" duration="31554000" />
       <workItem from="1630064838013" duration="1044000" />
-      <workItem from="1630069492160" duration="1382000" />
+      <workItem from="1630069492160" duration="1448000" />
     </task>
     <task id="LOCAL-00001" summary="完善了-o命令。支持开机自启。可以绕过火绒、wd。360会弹窗操作提醒。&#10;TODO:开发用户添加模块中。">
       <created>1630061993462</created>
@@ -145,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630070646941</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="[*]1.0.2 修复设置自启时逻辑出错；优化异常抛出">
+      <created>1630070893394</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1630070893394</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
