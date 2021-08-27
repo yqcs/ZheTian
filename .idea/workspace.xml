@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d685e1f9-8fce-44fd-8a45-d60094dfd2f9" name="Changes" comment="添加 -o命令，实现开机自启权限维持">
-      <change afterPath="$PROJECT_DIR$/dev/netUserAdd.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_8_26_17_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_8_26_17_02__Changes_.xml" afterDir="false" />
+    <list default="true" id="d685e1f9-8fce-44fd-8a45-d60094dfd2f9" name="Changes" comment="完善了-o命令。支持开机自启。可以绕过火绒、wd。360会弹窗操作提醒。&#10;TODO:开发用户添加模块中。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.syso" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/loadShellCode.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/memoryInject.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/root.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/cmd.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/loadFile.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/startUp.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/selfStart.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/1.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,11 +63,16 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\desktop\Code\go\ZheTian\images" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="go build ZheTian" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="ZheTian" />
       <working_directory value="$PROJECT_DIR$" />
-      <parameters value="-u http://124.70.40.185/code.txt -o true" />
+      <parameters value="-h" />
       <kind value="PACKAGE" />
       <package value="ZheTian" />
       <directory value="$PROJECT_DIR$" />
@@ -97,8 +94,16 @@
       <option name="presentableId" value="Default" />
       <updated>1629969510608</updated>
       <workItem from="1629969514971" duration="360000" />
-      <workItem from="1629970941055" duration="31008000" />
+      <workItem from="1629970941055" duration="31554000" />
     </task>
+    <task id="LOCAL-00001" summary="完善了-o命令。支持开机自启。可以绕过火绒、wd。360会弹窗操作提醒。&#10;TODO:开发用户添加模块中。">
+      <created>1630061993462</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1630061993462</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,7 +123,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="添加 -o命令，实现开机自启权限维持" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加 -o命令，实现开机自启权限维持" />
+    <MESSAGE value="完善了-o命令。支持开机自启。可以绕过火绒、wd。360会弹窗操作提醒。&#10;TODO:开发用户添加模块中。" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善了-o命令。支持开机自启。可以绕过火绒、wd。360会弹窗操作提醒。&#10;TODO:开发用户添加模块中。" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
