@@ -34,10 +34,10 @@ Java、c、ruby等同理。只需将字节数组里的16进制代码提取出来
 
 ### 编译：
 
-> go build -ldflags "-w -s"  main.go
+> go build -ldflags "-w -s" -o ZheTian.exe
 
 可以使用
-> go build -ldflags "-w -s -H windowsgui" main.go
+> go build -ldflags "-w -s -H windowsgui" -o ZheTian.exe
 
 实现无窗口运行。但是360偶尔会识别为恶意程序。如果目标机器无安全设备，可以尝试使用此命令打包，然后使用参数： ` -o true` 实现写入启动项功能。
 
