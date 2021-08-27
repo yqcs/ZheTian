@@ -19,8 +19,7 @@ var (
 		Use:   "ZheTian",
 		Short: "http://github.com/yqcs/ZheTian",
 		RunE: func(cmd *cobra.Command, args []string) error {
-			err := startService()
-			if err != nil {
+			if err := startService(); err != nil {
 				fmt.Println(err)
 				os.Exit(1)
 			}
@@ -44,7 +43,8 @@ func Execute() {
 		return
 	}
 	if err := rootCmd.Execute(); err != nil {
-		panic(err.Error())
+		fmt.Println(err.Error())
+		os.Exit(1)
 	}
 }
 
@@ -63,7 +63,7 @@ func startService() error {
 		ResourceModel()
 	} else {
 		fmt.Println("\nRun command: ZheTian -help")
-		os.Exit(0)
+		os.Exit(1)
 	}
 	if StartMenu {
 		StartUp()

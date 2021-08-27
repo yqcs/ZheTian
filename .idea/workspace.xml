@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d685e1f9-8fce-44fd-8a45-d60094dfd2f9" name="Changes" comment="完善了-o命令。支持开机自启。可以绕过火绒、wd。360会弹窗操作提醒。&#10;TODO:开发用户添加模块中。">
+    <list default="true" id="d685e1f9-8fce-44fd-8a45-d60094dfd2f9" name="Changes" comment="update">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_8_26_17_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_8_26_17_02__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.exe.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/ZheTian.manifest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/ZheTian.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/cmd.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/cmd.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/loadFile.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/loadFile.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/selfStart.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/selfStart.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +33,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../Go" />
+  <component name="GOROOT" url="file://D:/Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -35,9 +41,9 @@
     <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/server/memoryInject.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/dev/netUserAdd.go" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/main.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/server/memoryInject.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ZheTian.go" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1xG7KgUOP6EzwcWlKTInpgN7hsx" />
   <component name="ProjectViewState">
@@ -50,18 +56,20 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="configurable..is.expanded" value="false" />
     <property name="configurable.GoLibrariesConfigurable.is.expanded" value="true" />
     <property name="go.formatter.settings.were.checked" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/layout" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -69,6 +77,17 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="go build ZheTian" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="ZheTian" />
       <working_directory value="$PROJECT_DIR$" />
@@ -95,6 +114,8 @@
       <updated>1629969510608</updated>
       <workItem from="1629969514971" duration="360000" />
       <workItem from="1629970941055" duration="31554000" />
+      <workItem from="1630064838013" duration="1044000" />
+      <workItem from="1630069492160" duration="1046000" />
     </task>
     <task id="LOCAL-00001" summary="完善了-o命令。支持开机自启。可以绕过火绒、wd。360会弹窗操作提醒。&#10;TODO:开发用户添加模块中。">
       <created>1630061993462</created>
@@ -103,7 +124,28 @@
       <option name="project" value="LOCAL" />
       <updated>1630061993462</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <created>1630065077860</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1630065077860</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update">
+      <created>1630065163389</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1630065163389</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update">
+      <created>1630065241422</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1630065241422</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,7 +166,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="添加 -o命令，实现开机自启权限维持" />
     <MESSAGE value="完善了-o命令。支持开机自启。可以绕过火绒、wd。360会弹窗操作提醒。&#10;TODO:开发用户添加模块中。" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善了-o命令。支持开机自启。可以绕过火绒、wd。360会弹窗操作提醒。&#10;TODO:开发用户添加模块中。" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>

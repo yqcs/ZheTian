@@ -42,12 +42,15 @@ Java、c、ruby等同理。只需将字节数组里的16进制代码提取出来
 实现无窗口运行。但是360偶尔会识别为恶意程序。如果目标机器无安全设备，可以尝试使用此命令打包，然后使用参数： ` -o true` 实现写入启动项功能。
 
 #### 带图标编译：
->先执行：go get github.com/akavel/rsrc
-> 
->再执行go build -ldflags '-w -s' -o main.exe
+
+> 先执行：go get github.com/akavel/rsrc
+>
+> rsrc -manifest ZheTian.manifest -ico favicon.ico -o ZheTian.syso
+>
+>再执行go build -ldflags "-w -s" -o ZheTian.exe
 >
 > 更多介绍：https://blog.csdn.net/qq_38376348/article/details/108318880
-> 
+>
 ![my-logo.png](https://raw.githubusercontent.com/yqcs/ZheTian/master/images/1.png "my-logo")
 
 ### 注意：打包的时候需指定是64位还是32位。默认会根据系统自动选择。 而在生成payload shellcode的时候也需要选择正确的位数，否则会加载失败。使用code字节码加载时一定要使用base64加密，否则无法解析！！
