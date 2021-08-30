@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d685e1f9-8fce-44fd-8a45-d60094dfd2f9" name="Changes" comment="[*]1.0.2 修复设置自启时逻辑出错；优化异常抛出">
+    <list default="true" id="d685e1f9-8fce-44fd-8a45-d60094dfd2f9" name="Changes" comment="增加用户添加模块">
+      <change afterPath="$PROJECT_DIR$/server/netUserAdd.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZheTian.go" beforeDir="false" afterPath="$PROJECT_DIR$/ZheTian.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/netUserAdd.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/cmd.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/cmd.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/loadFile.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/loadFile.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +31,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" url="file://D:/Go" />
+  <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -33,11 +39,12 @@
     <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/dev/netUserAdd.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/server/memoryInject.go" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ZheTian.go" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1xG7KgUOP6EzwcWlKTInpgN7hsx" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -48,20 +55,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
     <property name="configurable..is.expanded" value="false" />
     <property name="configurable.GoLibrariesConfigurable.is.expanded" value="true" />
     <property name="go.formatter.settings.were.checked" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/layout" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
-    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -69,16 +74,13 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="ZheTian" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
     </configuration>
     <configuration name="go build ZheTian" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="ZheTian" />
@@ -88,6 +90,15 @@
       <package value="ZheTian" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="ZheTian" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="DIRECTORY" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -106,8 +117,6 @@
       <updated>1629969510608</updated>
       <workItem from="1629969514971" duration="360000" />
       <workItem from="1629970941055" duration="31554000" />
-      <workItem from="1630064838013" duration="1044000" />
-      <workItem from="1630069492160" duration="1448000" />
     </task>
     <task id="LOCAL-00001" summary="完善了-o命令。支持开机自启。可以绕过火绒、wd。360会弹窗操作提醒。&#10;TODO:开发用户添加模块中。">
       <created>1630061993462</created>
@@ -116,42 +125,7 @@
       <option name="project" value="LOCAL" />
       <updated>1630061993462</updated>
     </task>
-    <task id="LOCAL-00002" summary="update">
-      <created>1630065077860</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1630065077860</updated>
-    </task>
-    <task id="LOCAL-00003" summary="update">
-      <created>1630065163389</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1630065163389</updated>
-    </task>
-    <task id="LOCAL-00004" summary="update">
-      <created>1630065241422</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1630065241422</updated>
-    </task>
-    <task id="LOCAL-00005" summary="[*]1.0.2 修复设置自启时逻辑出错；优化异常抛出">
-      <created>1630070646941</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1630070646941</updated>
-    </task>
-    <task id="LOCAL-00006" summary="[*]1.0.2 修复设置自启时逻辑出错；优化异常抛出">
-      <created>1630070893394</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1630070893394</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,9 +146,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="添加 -o命令，实现开机自启权限维持" />
     <MESSAGE value="完善了-o命令。支持开机自启。可以绕过火绒、wd。360会弹窗操作提醒。&#10;TODO:开发用户添加模块中。" />
-    <MESSAGE value="update" />
-    <MESSAGE value="[*]1.0.2 修复设置自启时逻辑出错；优化异常抛出" />
-    <option name="LAST_COMMIT_MESSAGE" value="[*]1.0.2 修复设置自启时逻辑出错；优化异常抛出" />
+    <MESSAGE value="增加用户添加模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加用户添加模块" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>

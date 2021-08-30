@@ -12,6 +12,8 @@ import (
 //UriModel  远程模式
 func UriModel() {
 	resp, err := http.Get(Uri)
+	defer resp.Body.Close()
+
 	if err != nil {
 		fmt.Println(err.Error())
 		os.Exit(1)
@@ -22,7 +24,6 @@ func UriModel() {
 		os.Exit(1)
 	}
 	ShellCodeByte = body
-	resp.Body.Close()
 }
 
 //ReadFileModel 读取本地文件模式
@@ -38,7 +39,7 @@ func ReadFileModel() {
 		os.Exit(1)
 	}
 	ShellCodeByte = body
-	file.Close()
+	defer file.Close()
 }
 
 //ResourceModel 原文件模式
@@ -75,5 +76,10 @@ func ResourceModel() {
 		str = strings.Replace(str, " ", "", -1)
 	}
 	str = base64.StdEncoding.EncodeToString([]byte(str))
+	ShellCodeByte = []byte(str)
+}
+
+func CommLineModel() {
+	str := base64.StdEncoding.EncodeToString([]byte(commLine))
 	ShellCodeByte = []byte(str)
 }
