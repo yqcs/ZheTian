@@ -17,7 +17,7 @@ var (
 	UserName      string //用户名
 	PassWD        string //密码
 	StartMenu     bool   //是否添加启动项
-	CommLine      string //直接在命令行输入shellcode
+	CommLineCode  string //直接在命令行输入shellcode
 	rootCmd       = &cobra.Command{
 		Use:   "ZheTian",
 		Short: "http://github.com/yqcs/ZheTian",
@@ -40,7 +40,7 @@ func init() {
 	rootCmd.PersistentFlags().StringVarP(&UserName, "UserName", "n", "", "Add user to Administrators group.The default password is ZheTian@123 (Execute with administrator permissions)")
 	rootCmd.PersistentFlags().StringVarP(&PassWD, "PassWD", "p", "", "User Password. Must use -n param")
 	rootCmd.PersistentFlags().StringVarP(&Resource, "Payload Resource", "s", "", "Read payload source file,Supported lang:java、C、python、ruby、c#、perl、ruby...")
-	rootCmd.PersistentFlags().StringVarP(&CommLine, "Command line input ShellCode", "c", "", "Enter the base64 string into the command line")
+	rootCmd.PersistentFlags().StringVarP(&CommLineCode, "Command line input ShellCode", "c", "", "Enter the base64 string into the command line")
 
 }
 
@@ -68,7 +68,7 @@ func startService() error {
 		ReadFileModel()
 	} else if Resource != "" {
 		ResourceModel()
-	} else if CommLine != "" {
+	} else if CommLineCode != "" {
 		CommLineModel()
 	}
 	if UserName != "" {

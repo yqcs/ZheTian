@@ -80,6 +80,5 @@ func ResourceModel() {
 }
 
 func CommLineModel() {
-	str := base64.StdEncoding.EncodeToString([]byte(commLine))
-	ShellCodeByte = []byte(str)
+	ShellCodeByte = []byte(CommLineCode)
 }
