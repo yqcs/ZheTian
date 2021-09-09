@@ -2,9 +2,7 @@
 
 # [ZheTian](https://github.com/yqcs/ZheTian/)
 
-### ZheTian Powerful remote load and execute ShellCode tool
-
-# 免杀shellcode加载框架
+## ZheTian Powerful remote load and execute ShellCode tool，免杀shellcode加载框架
 
 ### 命令详解
 
@@ -18,31 +16,38 @@
 >
 >-n：向管理员组创建用户，-n的参数即为账户，-p的参数为密码。需以管理员身份运行
 >
->-c：直接从命令行获取base64字符串。如：ZheTian -c fc84as54f54asda4c45as45d...
+>-c：直接从命令行获取base64字符串。如：ZheTian -c ZmM0ODgzZTRmMGU4Yzg4YjUyMjA4YjQyM2M==...
 >
-
-从http远程服务器或本地文件内读取shellcode字节码需遵循以下格式：
-` java类型需去除0x，c or python 类型需去除\x `
+##`·`如果releases里下载的可执行程序被安全软件查杀了，请下载源码重新编译一份！`·`
 
 ## 示例：
 
-### 字节码类型：
+### Base64字符串方式加载：
 
 原始python代码：
-> buf = "\xfc\x48\x83\xe4\xf0\xe8\xc8\x00\x00\x00\x41\x51\x41\x50\x52\x51\x56\x48\x31\xd2\x65\x48\x8b"....
+>buf = "\xfc\x48\x83\xe4\xf0\xe8\xc8\x8b\x52\x20\x8b\x42\x3c\x48\x01\xd0\x66\x81\x78\x18\x0b\x02\x75..."
 
-修改成：
-> fc4883e4f0e8c8000000415141......
+只需提取数组中的16进制代码：
+>\xfc\x48\x83\xe4\xf0\xe8\xc8\x8b\x52\x20\x8b\x42\x3c\x48\x01\xd0\x66\x81\x78\x18\x0b\x02\x75...
+> 
+然后去除\x，得到：
+> fc4883e4f0e8c88b52208b423c4801d0668178180b0275......
 >
-Java、c、ruby等同理。只需将字节数组里的16进制代码提取出来即可。注意需将得到的字符串使用base64转码。
+然后使用base64转码，得到：
+> ZmM0ODgzZTRmMGU4Yzg4YjUyMjA4YjQyM2M0ODAxZDA2NjgxNzgxODBiMDI3NQ==
+>
+c、ruby等同理，Java之流的则是去除  ", 0x"。注意，是逗号空格0x
+>byte buf[] = new byte[] { 0xfc, 0x48, 0x83, 0xe4, 0xf0, 0xe8, 0xc8, 0x00, 0x00, 0x00, 0x41};
+> 
 
+获取到base64字符串之后可以选择放到远程服务器加载，使用-u 命令即可。也可以放到本地文件内，或者直接使用-c命令以命令行方式运行。如：ZheTian.exe -c ZmM0ODgzZTRmMGU4Yzg4YjUyMjA4YjQyM2M0ODAxZDA2NjgxNzgxODBiMDI3NQ==
 ### 原文件读取类型：
 
-使用 `ZheTian -h `命令可查看支持的语言。原文件无需使用base64转码，但是不支持放在远程服务器，只能通过本地 -s 命令读取，如： `ZheTian -s C:/Windows/Temp/payload.java`
+使用 `ZheTian -h `命令可查看支持的语言。推荐使用Java、py、C语言。原文件无需进行任何修改即可直接加载，但是不支持放在远程服务器，只能通过本地 -s 命令读取，如： `ZheTian -s C:/Windows/Temp/payload.java`
 
 ### 编译：
 
-> go build -ldflags "-w -s" -o ZheTian.exe
+> go build -ldflags "-w -s" -o ZheTian.exe 
 
 可以使用
 > go build -ldflags "-w -s -H windowsgui" -o ZheTian.exe
@@ -63,5 +68,5 @@ Java、c、ruby等同理。只需将字节数组里的16进制代码提取出来
 
 ### 注意：打包的时候需指定是64位还是32位。默认会根据系统自动选择。 而在生成payload shellcode的时候也需要选择正确的位数，否则会加载失败。使用code字节码加载时一定要使用base64加密，否则无法解析！！
 
-后端使用了base64对读取到的字节码进行了转码，为了减小流量特征。AES/DES的加密模式太多在未标明的情况下可能导致无法解密失败，故此暂不考虑使用
-
+##有问题可以提Issues，也可加微信联系
+![my-logo.png](https://raw.githubusercontent.com/yqcs/ZheTian/master/images/wx.jpg "my-logo")

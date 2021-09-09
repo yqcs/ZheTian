@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d685e1f9-8fce-44fd-8a45-d60094dfd2f9" name="Changes" comment="增加用户添加模块">
+    <list default="true" id="d685e1f9-8fce-44fd-8a45-d60094dfd2f9" name="Changes" comment="[*]1.0.2 修复设置自启时逻辑出错；优化异常抛出">
+      <change afterPath="$PROJECT_DIR$/images/wx.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZheTian.go" beforeDir="false" afterPath="$PROJECT_DIR$/ZheTian.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/cmd.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/cmd.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/loadFile.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/loadFile.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/memoryInject.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/memoryInject.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/netUserAdd.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/netUserAdd.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/selfStart.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/selfStart.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,20 +34,26 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../Go" />
+  <component name="GOROOT" url="file://D:/Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/server/memoryInject.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ZheTian.go" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1xG7KgUOP6EzwcWlKTInpgN7hsx" />
-  <component name="ProjectLevelVcsManager">
-    <OptionsSetting value="false" id="Update" />
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -52,50 +64,39 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="configurable..is.expanded" value="false" />
     <property name="configurable.GoLibrariesConfigurable.is.expanded" value="true" />
     <property name="go.formatter.settings.were.checked" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/layout" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\29326\Desktop\ZheTian\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\29326\Desktop\ZheTian\images" />
       <recent name="D:\desktop\Code\go\ZheTian\images" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
-      <module name="ZheTian" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
     <configuration name="go build ZheTian" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="ZheTian" />
       <working_directory value="$PROJECT_DIR$" />
-      <parameters value="-c ZmM0ODgzZTRmMGU4YzgwMDAwMDA0MTUxNDE1MDUyNTE1NjQ4MzFkMjY1NDg4YjUyNjA0ODhiNTIxODQ4OGI1MjIwNDg4YjcyNTA0ODBmYjc0YTRhNGQzMWM5NDgzMWMwYWMzYzYxN2MwMjJjMjA0MWMxYzkwZDQxMDFjMWUyZWQ1MjQxNTE0ODhiNTIyMDhiNDIzYzQ4MDFkMDY2ODE3ODE4MGIwMjc1NzI4YjgwODgwMDAwMDA0ODg1YzA3NDY3NDgwMWQwNTA4YjQ4MTg0NDhiNDAyMDQ5MDFkMGUzNTY0OGZmYzk0MThiMzQ4ODQ4MDFkNjRkMzFjOTQ4MzFjMGFjNDFjMWM5MGQ0MTAxYzEzOGUwNzVmMTRjMDM0YzI0MDg0NTM5ZDE3NWQ4NTg0NDhiNDAyNDQ5MDFkMDY2NDE4YjBjNDg0NDhiNDAxYzQ5MDFkMDQxOGIwNDg4NDgwMWQwNDE1ODQxNTg1ZTU5NWE0MTU4NDE1OTQxNWE0ODgzZWMyMDQxNTJmZmUwNTg0MTU5NWE0ODhiMTJlOTRmZmZmZmZmNWQ2YTAwNDliZTc3Njk2ZTY5NmU2NTc0MDA0MTU2NDk4OWU2NGM4OWYxNDFiYTRjNzcyNjA3ZmZkNTQ4MzFjOTQ4MzFkMjRkMzFjMDRkMzFjOTQxNTA0MTUwNDFiYTNhNTY3OWE3ZmZkNWViNzM1YTQ4ODljMTQxYjhiODIyMDAwMDRkMzFjOTQxNTE0MTUxNmEwMzQxNTE0MWJhNTc4OTlmYzZmZmQ1ZWI1OTViNDg4OWMxNDgzMWQyNDk4OWQ4NGQzMWM5NTI2ODAwMDI0MDg0NTI1MjQxYmFlYjU1MmUzYmZmZDU0ODg5YzY0ODgzYzM1MDZhMGE1ZjQ4ODlmMTQ4ODlkYTQ5YzdjMGZmZmZmZmZmNGQzMWM5NTI1MjQxYmEyZDA2MTg3YmZmZDU4NWMwMGY4NTlkMDEwMDAwNDhmZmNmMGY4NDhjMDEwMDAwZWJkM2U5ZTQwMTAwMDBlOGEyZmZmZmZmMmY0NTM5NjU3YTAwMjg4MmQ3NmUzOWViY2Y3ZmJhNDdhZTdkYjVlODI0MWE1OWUxYzI4NjVlYTg1OWM4MGE0MzNiNmYxZDk2YjQ5NmYzM2U5Y2JlNTI4YzZmMDEyZDMwMzI5MTdlZjliYjRhNTYzNjUxNzFkYjM5NjUzZmRjNGM3OTk1YTRlZGRiMDZmNTEyYzMyNzQ5MWJjOTE2YjIwMDU1NzM2NTcyMmQ0MTY3NjU2ZTc0M2EyMDRkNmY3YTY5NmM2YzYxMmYzNTJlMzAyMDI4NjM2ZjZkNzA2MTc0Njk2MjZjNjUzYjIwNGQ1MzQ5NDUyMDMxMzAyZTMwM2IyMDU3Njk2ZTY0NmY3NzczMjA0ZTU0MjAzNjJlMzIzYjIwNTc2OTZlMzYzNDNiMjA3ODM2MzQzYjIwNTQ3MjY5NjQ2NTZlNzQyZjM2MmUzMDI5MGQwYTAwZmVkYWRlZGFkMTFmODk4MjU1MzdkZjM1Mjg0MDAyOTM2NjU2M2Y3YmRiZDg2ZGVmMWZkZjQ5MDlkMjk2ODA1ZWY4M2JkM2EzZGE3YTBiNzYwMWZhMjEzNTk0YjMzYTg4ZjBlNmI4YjgwZjgxMzVjNzNhNmFiNDk5YjYyNzMxZTEzYjU0ZDkyMjVkMGM2NGU5ODEwN2FlYjMwNmY1NjM5MDI4ZjNiMDVkMDBjOWI4ZDZjNTIxMmM1M2EzZjcyZDU3NGU2MmFkOTA4YTBjYTBkODAyNmRlYTU0NGY5OTRkNGE0YTBiODBjNDk2NTM3NWFmYjc1MjVjZDVhMjAyNjJkOTEzOGExMTFlYjYyYjRjMzg3MGI3ODNmY2Q4ZjMzOWEyYmZhYzFlZGJiZTc3MGI1ZGE2ZjUxMzgxNGZhOTg2YjdiNDg5N2U0MjJkYzQ0OGJiMjRjMzZlZDcxMTM1MjMwZWUzZTE1ZDA0OWY4NjNhOTM4ZDk1ZDhlZGYwMDcxZGZiNGU4MDhhNzk0YjgyODliMmQyN2FhMDkyYjEzODBjMzgyNDgwMDg4NzAwNDFiZWYwYjVhMjU2ZmZkNTQ4MzFjOWJhMDAwMDQwMDA0MWI4MDAxMDAwMDA0MWI5NDAwMDAwMDA0MWJhNThhNDUzZTVmZmQ1NDg5MzUzNTM0ODg5ZTc0ODg5ZjE0ODg5ZGE0MWI4MDAyMDAwMDA0OTg5Zjk0MWJhMTI5Njg5ZTJmZmQ1NDg4M2M0MjA4NWMwNzRiNjY2OGIwNzQ4MDFjMzg1YzA3NWQ3NTg1ODU4NDgwNTAwMDAwMDAwNTBjM2U4OWZmZGZmZmYzMTMyMzQyZTM3MzAyZTM0MzAyZTMxMzgzNTAwMTk2OWEwOGQ=" />
+      <parameters value="-h" />
       <kind value="PACKAGE" />
       <package value="ZheTian" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/main.go" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
-      <module name="ZheTian" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="DIRECTORY" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -114,6 +115,11 @@
       <updated>1629969510608</updated>
       <workItem from="1629969514971" duration="360000" />
       <workItem from="1629970941055" duration="31554000" />
+      <workItem from="1630064838013" duration="1044000" />
+      <workItem from="1630069492160" duration="1541000" />
+      <workItem from="1630071618531" duration="238000" />
+      <workItem from="1630714808891" duration="25000" />
+      <workItem from="1631186290913" duration="3934000" />
     </task>
     <task id="LOCAL-00001" summary="完善了-o命令。支持开机自启。可以绕过火绒、wd。360会弹窗操作提醒。&#10;TODO:开发用户添加模块中。">
       <created>1630061993462</created>
@@ -122,14 +128,49 @@
       <option name="project" value="LOCAL" />
       <updated>1630061993462</updated>
     </task>
-    <task id="LOCAL-00002" summary="增加用户添加模块">
-      <created>1630304512924</created>
+    <task id="LOCAL-00002" summary="update">
+      <created>1630065077860</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1630304512924</updated>
+      <updated>1630065077860</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update">
+      <created>1630065163389</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1630065163389</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update">
+      <created>1630065241422</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1630065241422</updated>
+    </task>
+    <task id="LOCAL-00005" summary="[*]1.0.2 修复设置自启时逻辑出错；优化异常抛出">
+      <created>1630070646941</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1630070646941</updated>
+    </task>
+    <task id="LOCAL-00006" summary="[*]1.0.2 修复设置自启时逻辑出错；优化异常抛出">
+      <created>1630070893394</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1630070893394</updated>
+    </task>
+    <task id="LOCAL-00007" summary="[*]1.0.2 修复设置自启时逻辑出错；优化异常抛出">
+      <created>1630070958862</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1630070958862</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,8 +191,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="添加 -o命令，实现开机自启权限维持" />
     <MESSAGE value="完善了-o命令。支持开机自启。可以绕过火绒、wd。360会弹窗操作提醒。&#10;TODO:开发用户添加模块中。" />
-    <MESSAGE value="增加用户添加模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加用户添加模块" />
+    <MESSAGE value="update" />
+    <MESSAGE value="[*]1.0.2 修复设置自启时逻辑出错；优化异常抛出" />
+    <option name="LAST_COMMIT_MESSAGE" value="[*]1.0.2 修复设置自启时逻辑出错；优化异常抛出" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>

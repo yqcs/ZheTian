@@ -7,6 +7,7 @@ import (
 	"unsafe"
 )
 
+//USER_INFO_1 netapi32.dll中NetUserAdd方法需要的参数。
 type USER_INFO_1 struct {
 	Usri1_name         *uint16
 	Usri1_password     *uint16
@@ -28,6 +29,7 @@ var (
 	procNetLocalGroupAddMembers = netApi32.NewProc("NetLocalGroupAddMembers") //获取dll的添加用户组方法
 )
 
+//UserInfo 用户结构体
 type UserInfo struct {
 	UserName string
 	UserPass string
@@ -51,13 +53,14 @@ func NetUserAdd(
 	r1, _, _ := procNetUserAdd.Call(
 		uintptr(0),                      //servername.如果为null则是添加到本机。在go中调用的话，填0忽略
 		uintptr(uint32(1)),              //level
-		uintptr(unsafe.Pointer(&uInfo)), //userInfo
+		uintptr(unsafe.Pointer(&uInfo)), //添加的用户结构体
 		uintptr(0),                      //err
 	)
 	if r1 != 0 {
 		return syscall.Errno(r1)
 	}
-	//默认将新创建的用户加入管理员组
+
+	//将新创建的用户加入管理员组
 	_, err = addGroupMembership(addUser.UserName, "Administrators")
 	return err
 }
@@ -65,10 +68,15 @@ func NetUserAdd(
 //addGroupMembership 添加用户组
 func addGroupMembership(userName, groupName string) (bool, error) {
 	hn, _ := os.Hostname()
+	//构造完整的用户目录
+	//如：c:\user\heart
+	//将userHome转Pointer
 	uPointer, err := syscall.UTF16PtrFromString(hn + `\` + userName)
 	if err != nil {
 		return false, errors.New("unable to encode user name to UTF16")
 	}
+
+	//将群组转Pointer类型
 	gPointer, err := syscall.UTF16PtrFromString(groupName)
 	if err != nil {
 		return false, errors.New("unable to encode group name to UTF16")

