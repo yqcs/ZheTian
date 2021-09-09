@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d685e1f9-8fce-44fd-8a45-d60094dfd2f9" name="Changes" comment="[*]1.0.2 修复设置自启时逻辑出错；优化异常抛出">
-      <change afterPath="$PROJECT_DIR$/images/wx.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d685e1f9-8fce-44fd-8a45-d60094dfd2f9" name="Changes" comment="[*]1.0.4 增加注释，修复一个小bug~">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ZheTian.go" beforeDir="false" afterPath="$PROJECT_DIR$/ZheTian.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/cmd.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/cmd.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/memoryInject.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/memoryInject.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/netUserAdd.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/netUserAdd.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/selfStart.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/selfStart.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +110,7 @@
       <workItem from="1630069492160" duration="1541000" />
       <workItem from="1630071618531" duration="238000" />
       <workItem from="1630714808891" duration="25000" />
-      <workItem from="1631186290913" duration="3934000" />
+      <workItem from="1631186290913" duration="4032000" />
     </task>
     <task id="LOCAL-00001" summary="完善了-o命令。支持开机自启。可以绕过火绒、wd。360会弹窗操作提醒。&#10;TODO:开发用户添加模块中。">
       <created>1630061993462</created>
@@ -170,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630070958862</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="[*]1.0.4 增加注释，修复一个小bug~">
+      <created>1631190284734</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1631190284734</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,7 +191,8 @@
     <MESSAGE value="完善了-o命令。支持开机自启。可以绕过火绒、wd。360会弹窗操作提醒。&#10;TODO:开发用户添加模块中。" />
     <MESSAGE value="update" />
     <MESSAGE value="[*]1.0.2 修复设置自启时逻辑出错；优化异常抛出" />
-    <option name="LAST_COMMIT_MESSAGE" value="[*]1.0.2 修复设置自启时逻辑出错；优化异常抛出" />
+    <MESSAGE value="[*]1.0.4 增加注释，修复一个小bug~" />
+    <option name="LAST_COMMIT_MESSAGE" value="[*]1.0.4 增加注释，修复一个小bug~" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
