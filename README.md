@@ -18,7 +18,7 @@
 >
 >-c：直接从命令行获取base64字符串。如：ZheTian -c ZmM0ODgzZTRmMGU4Yzg4YjUyMjA4YjQyM2M==...
 >
-##`·`如果releases里下载的可执行程序被安全软件查杀了，请下载源码重新编译一份！`·`
+## `·`如果releases里下载的可执行程序被安全软件查杀了，请下载源码重新编译一份！`·`
 
 ## 示例：
 
