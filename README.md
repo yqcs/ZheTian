@@ -27,7 +27,7 @@
 
 > 该命令主要是向用户目录下创建tmp文件夹，然后生产只包含shellcode的程序，体积小了五六倍，极致压缩，并且无任何回显。由于ShellCode写死在了程序内，所以导致用一段时间就会被查杀。
 >
-> 注意使用该命令需填充shellcode，搭配-s、-u、-c、-r其中的任意命令即可，如：ZheTian -s payload.c -o true
+> 注意使用该命令需填充shellcode，同时拥有go环境。搭配-s、-u、-c、-r其中的任意命令即可，如：ZheTian -s payload.c -o true
 
 ## 示例：
 
