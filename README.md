@@ -64,7 +64,7 @@ ZmM0ODgzZTRmMGU4Yzg4YjUyMjA4YjQyM2M0ODAxZDA2NjgxNzgxODBiMDI3NQ==
 ![my-logo.png](https://github.com/yqcs/ZheTian/blob/master/images/payload.jpg "my-logo")
 
 然后根据需要的命令进行修改
-![my-logo.png](https://raw.githubusercontent.com/yqcs/ZheTian/master/images/payload.png "my-logo")
+![my-logo.png](https://raw.githubusercontent.com/yqcs/ZheTian/master/images/payload.jpg "my-logo")
 
 下面执行示例：
 ![my-logo.png](https://github.com/yqcs/ZheTian/blob/master/images/c.png "my-logo")
