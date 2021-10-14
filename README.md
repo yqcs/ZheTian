@@ -57,14 +57,16 @@ ZmM0ODgzZTRmMGU4Yzg4YjUyMjA4YjQyM2M0ODAxZDA2NjgxNzgxODBiMDI3NQ==
 使用 `ZheTian -h `命令可查看支持的语言。推荐使用Java、py、C语言。原文件无需进行任何修改即可直接加载，但是不支持放在远程服务器，只能通过本地 -s
 命令读取，如： `ZheTian -s C:/Windows/Temp/payload.java`
 
-### 图片操作
+### 图示操作过程
 
 先生成64位shellcode
 ![my-logo.png](https://github.com/yqcs/ZheTian/blob/master/images/payload.jpg "my-logo")
+
 然后根据需要的命令进行修改
-![my-logo.png](https://github.com/yqcs/ZheTian/blob/master/images/code.jpg "my-logo")
+![my-logo.png](https://raw.githubusercontent.com/yqcs/ZheTian/master/images/c.png "my-logo")
+
 下面执行示例：
-![my-logo.png](https://github.com/yqcs/ZheTian/blob/master/images/c.jpg "my-logo")
+![my-logo.png](https://github.com/yqcs/ZheTian/blob/master/images/c.png "my-logo")
 
 ### 编译：
 
