@@ -30,6 +30,14 @@ func main() {
 		name = "ZheTian"
 	}
 	uHome, _ := os.UserHomeDir()
+	_, exist := os.Stat(uHome + "\\tmp")
+	if os.IsNotExist(exist) {
+		err = os.Mkdir(uHome+"\\tmp", os.ModePerm)
+		if err != nil {
+			fmt.Println("Temporary folder creation failed.")
+			os.Exit(-1)
+		}
+	}
 	fileName := uHome + "\\tmp\\" + name + ".go"
 	f, e := os.Create(fileName)
 	if e != nil {
