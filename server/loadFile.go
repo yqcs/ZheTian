@@ -58,23 +58,25 @@ func ResourceModel() {
 	defer file.Close()
 	fileStr := string(fileByte)
 	if strings.Contains(fileStr, "{") {
-		//这是Java和C#之流
-		indexItem := strings.LastIndex(fileStr, "{")
-		lastItem := strings.LastIndex(fileStr, "}")
-		str = fileStr[indexItem+1 : lastItem]
-
-		//之所以写这两段代码是为了防止 0x15a0x的出现，然后再去除空格
-		str = strings.Replace(str, ", 0x", "", -1)
-		str = strings.Replace(str, "0x", "", 1)
-		str = strings.Replace(str, " ", "", -1)
+		//这是Java和C#之流，截取{}内的hex
+		str = fileStr[strings.LastIndex(fileStr, "{")+1 : strings.LastIndex(fileStr, "}")]
 	} else if strings.Contains(fileStr, "\\x") {
-		//这是c、python之流
-		indexItem := strings.Index(fileStr, "\"")
-		lastItem := strings.LastIndex(fileStr, "\"")
-		str = fileStr[indexItem+1 : lastItem]
-		str = strings.Replace(str, "\\x", "", -1)
-		str = strings.Replace(str, " ", "", -1)
+		//这是c、python之流，提取""内的hex
+		str = fileStr[strings.Index(fileStr, "\"")+1 : strings.LastIndex(fileStr, "\"")]
 	}
+
+	//过滤杂项
+	str = strings.ReplaceAll(str, "buf += b", "")
+	str = strings.ReplaceAll(str, "buf +=", "")
+	str = strings.ReplaceAll(str, "\"", "")
+	str = strings.ReplaceAll(str, "\\x", "")
+	str = strings.ReplaceAll(str, "0x", "")
+	str = strings.ReplaceAll(str, " ", "")
+	str = strings.ReplaceAll(str, ";", "")
+	str = strings.ReplaceAll(str, ",", "")
+	str = strings.ReplaceAll(str, "\t", "")
+	str = strings.ReplaceAll(str, "\r\n", "")
+	fmt.Println(str)
 	str = base64.StdEncoding.EncodeToString([]byte(str))
 	ShellCodeByte = []byte(str)
 }
