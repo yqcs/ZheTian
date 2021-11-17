@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d685e1f9-8fce-44fd-8a45-d60094dfd2f9" name="Changes" comment="[*]1.0.4 增加注释，修复一个小bug~">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="d685e1f9-8fce-44fd-8a45-d60094dfd2f9" name="Changes" comment="[+]1.0.5 增加读取-s支持msf生成的shellcode。貌似是行。没用过msf的shellcode，不知其内容结构">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_8_26_17_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_8_26_17_02__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/loadFile.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/loadFile.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/memoryInject.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/memoryInject.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +21,9 @@
       <option value="module" />
     </option>
   </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -25,7 +31,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" url="file://D:/Go" />
+  <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -41,8 +47,8 @@
     <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/server/memoryInject.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ZheTian.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/server/memoryInject.go" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1xG7KgUOP6EzwcWlKTInpgN7hsx" />
   <component name="ProjectViewState">
@@ -83,7 +89,7 @@
     <configuration name="go build ZheTian" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="ZheTian" />
       <working_directory value="$PROJECT_DIR$" />
-      <parameters value="-h" />
+      <parameters value="-s C:\Users\Heartsk\Desktop\payload.jpg" />
       <kind value="PACKAGE" />
       <package value="ZheTian" />
       <directory value="$PROJECT_DIR$" />
@@ -92,7 +98,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build ZheTian" />
+        <item itemvalue="Go 构建.go build ZheTian" />
       </list>
     </recent_temporary>
   </component>
@@ -111,6 +117,11 @@
       <workItem from="1630071618531" duration="238000" />
       <workItem from="1630714808891" duration="25000" />
       <workItem from="1631186290913" duration="4032000" />
+      <workItem from="1634630293072" duration="657000" />
+      <workItem from="1634696483476" duration="113000" />
+      <workItem from="1635933718918" duration="15000" />
+      <workItem from="1636943527505" duration="2054000" />
+      <workItem from="1637118758751" duration="881000" />
     </task>
     <task id="LOCAL-00001" summary="完善了-o命令。支持开机自启。可以绕过火绒、wd。360会弹窗操作提醒。&#10;TODO:开发用户添加模块中。">
       <created>1630061993462</created>
@@ -168,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631190284734</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="[+]1.0.5 增加读取-s支持msf生成的shellcode。貌似是行。没用过msf的shellcode，不知其内容结构">
+      <created>1636945275235</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1636945275235</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,7 +210,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="[*]1.0.2 修复设置自启时逻辑出错；优化异常抛出" />
     <MESSAGE value="[*]1.0.4 增加注释，修复一个小bug~" />
-    <option name="LAST_COMMIT_MESSAGE" value="[*]1.0.4 增加注释，修复一个小bug~" />
+    <MESSAGE value="[+]1.0.5 增加读取-s支持msf生成的shellcode。貌似是行。没用过msf的shellcode，不知其内容结构" />
+    <option name="LAST_COMMIT_MESSAGE" value="[+]1.0.5 增加读取-s支持msf生成的shellcode。貌似是行。没用过msf的shellcode，不知其内容结构" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>

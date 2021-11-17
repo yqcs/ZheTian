@@ -76,7 +76,6 @@ func ResourceModel() {
 	str = strings.ReplaceAll(str, ",", "")
 	str = strings.ReplaceAll(str, "\t", "")
 	str = strings.ReplaceAll(str, "\r\n", "")
-	fmt.Println(str)
 	str = base64.StdEncoding.EncodeToString([]byte(str))
 	ShellCodeByte = []byte(str)
 }
