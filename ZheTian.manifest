@@ -5,7 +5,8 @@
     processorArchitecture="x86"
     name="controls"
     type="win32"
-></assemblyIdentity>
+>
+</assemblyIdentity>
 <dependency>
     <dependentAssembly>
         <assemblyIdentity

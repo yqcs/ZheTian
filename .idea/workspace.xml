@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d685e1f9-8fce-44fd-8a45-d60094dfd2f9" name="Changes" comment="[+]1.0.5 增加读取-s支持msf生成的shellcode。貌似是行。没用过msf的shellcode，不知其内容结构">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_8_26_17_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_8_26_17_02__Changes_.xml" afterDir="false" />
+    <list default="true" id="d685e1f9-8fce-44fd-8a45-d60094dfd2f9" name="Changes" comment="--">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/loadFile.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/loadFile.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZheTian.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/ZheTian.manifest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/cmd.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/cmd.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/memoryInject.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/memoryInject.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/selfStart.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/temp.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/temp.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +35,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../Go" />
+  <component name="GOROOT" url="file://C:/Program Files/Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -47,8 +51,13 @@
     <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/server/loadFile.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ZheTian.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/server/memoryInject.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/server/cmd.go" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1xG7KgUOP6EzwcWlKTInpgN7hsx" />
   <component name="ProjectViewState">
@@ -64,10 +73,13 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="configurable..is.expanded" value="false" />
     <property name="configurable.GoLibrariesConfigurable.is.expanded" value="true" />
+    <property name="go.format.on.save.advertiser.fired" value="true" />
     <property name="go.formatter.settings.were.checked" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.watchers.conflict.with.on.save.actions.check.performed" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -96,11 +108,6 @@
       <filePath value="$PROJECT_DIR$/main.go" />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Go 构建.go build ZheTian" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -122,6 +129,17 @@
       <workItem from="1635933718918" duration="15000" />
       <workItem from="1636943527505" duration="2054000" />
       <workItem from="1637118758751" duration="881000" />
+      <workItem from="1637122175856" duration="2698000" />
+      <workItem from="1637820657664" duration="111000" />
+      <workItem from="1637827736555" duration="33000" />
+      <workItem from="1637836521244" duration="743000" />
+      <workItem from="1637889796333" duration="24000" />
+      <workItem from="1637892013197" duration="84000" />
+      <workItem from="1637892942117" duration="11000" />
+      <workItem from="1637897537975" duration="49000" />
+      <workItem from="1637902267394" duration="79000" />
+      <workItem from="1638153931257" duration="16000" />
+      <workItem from="1639016678462" duration="105000" />
     </task>
     <task id="LOCAL-00001" summary="完善了-o命令。支持开机自启。可以绕过火绒、wd。360会弹窗操作提醒。&#10;TODO:开发用户添加模块中。">
       <created>1630061993462</created>
@@ -186,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636945275235</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="--">
+      <created>1637122251937</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1637122251937</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,7 +227,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="添加 -o命令，实现开机自启权限维持" />
@@ -211,7 +235,8 @@
     <MESSAGE value="[*]1.0.2 修复设置自启时逻辑出错；优化异常抛出" />
     <MESSAGE value="[*]1.0.4 增加注释，修复一个小bug~" />
     <MESSAGE value="[+]1.0.5 增加读取-s支持msf生成的shellcode。貌似是行。没用过msf的shellcode，不知其内容结构" />
-    <option name="LAST_COMMIT_MESSAGE" value="[+]1.0.5 增加读取-s支持msf生成的shellcode。貌似是行。没用过msf的shellcode，不知其内容结构" />
+    <MESSAGE value="--" />
+    <option name="LAST_COMMIT_MESSAGE" value="--" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
