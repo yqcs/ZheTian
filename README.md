@@ -83,7 +83,7 @@ ZmM0ODgzZTRmMGU4Yzg4YjUyMjA4YjQyM2M0ODAxZDA2NjgxNzgxODBiMDI3NQ==
 
 由于ZheTian的defender免杀效果不稳定，在此推荐一种方式，执行下面命令会分别向defender添加白名单：目录、进程、类型文件
 
-####需以管理员权限运行
+#### 需以管理员权限运行
 
 > powershell -Command Add-MpPreference -ExclusionPath "C:\tmp"
 >
