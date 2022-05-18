@@ -61,7 +61,7 @@ func main() {
 		os.Exit(-1)
 	}
 	f.Close()
-	cmd := exec.Command("cmd.exe", "/c", "go", "build", "-ldflags", "-s -w -H windowsgui", name+".go")
+	cmd := exec.Command("cmd.exe", "/c", "go", "build", "-ldflags", "-s -w", name+".go")
 	cmd.Dir = uHome + "\\tmp"
 	if cmd.Run() != nil {
 		fmt.Println("Code packaging failed,Please check that the go language running environment is correct.")
