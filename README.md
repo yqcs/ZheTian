@@ -107,6 +107,6 @@ ZmM0ODgzZTRmMGU4Yzg4YjUyMjA4YjQyM2M0ODAxZDA2NjgxNzgxODBiMDI3NQ==
 > powershell -Command Add-MpPreference -ExclusionExtension ".java"
 >
 
-## 有问题加群反馈！！Issues 一概不处理！，如果失效加我微信
+## 有问题加群反馈！！Issues 一概不处理！如果失效加我微信
 <img src="https://heartsk.com/static/wx.jpg" width="350">
 <img src="images/group.png" width="350">
