@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d685e1f9-8fce-44fd-8a45-d60094dfd2f9" name="Changes" comment="--">
-      <change afterPath="$PROJECT_DIR$/images/v3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v2/core/core.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v2/core/temp32" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v2/core/temp64" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v2/core/tmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v2/core/utils.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_8_26_17_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_8_26_17_02__Changes_.xml" afterDir="false" />
+    <list default="true" id="d685e1f9-8fce-44fd-8a45-d60094dfd2f9" name="Changes" comment="3.0上线。2.0开源">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/ZheTian.go" beforeDir="false" afterPath="$PROJECT_DIR$/v2/ZheTian.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +226,8 @@
     <MESSAGE value="[*]1.0.4 增加注释，修复一个小bug~" />
     <MESSAGE value="[+]1.0.5 增加读取-s支持msf生成的shellcode。貌似是行。没用过msf的shellcode，不知其内容结构" />
     <MESSAGE value="--" />
-    <option name="LAST_COMMIT_MESSAGE" value="--" />
+    <MESSAGE value="3.0上线。2.0开源" />
+    <option name="LAST_COMMIT_MESSAGE" value="3.0上线。2.0开源" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>

@@ -9,6 +9,9 @@
 在线版本，可视化创建工具。域名：`zTian.red`欢迎志同道合的朋友来一起维护项目。
 
 ![v3](images/v3.png)
+
+2.0原理解析：
+https://mp.weixin.qq.com/s/h7wP-1e0uoJKxKVNLeEw1Q
 ###  
 
 ----
