@@ -1,10 +1,22 @@
 ![logo](images/logo.png)
 # ::ZheTian Powerful Anti Anti-Virus Trojan horse generator / 强大的免杀木马生成器
 
-## 全新V2上线，Bypass All.
+----
 
+### V3使用帮助：
+>新增反沙箱、隐藏窗口、Bypass UAC
+>
+在线版本，可视化创建工具。域名：`zTian.red`欢迎志同道合的朋友来一起维护项目。
 
-### V2版本支持Cobalt Strike、MSF原生Shellcode，无需任何处理即可直接使用，指令：
+![v3](images/v3.png)
+###  
+
+----
+
+### V2使用帮助：
+### 全新V2上线，Bypass All(releases已歇菜，改改代码重新生成还能用).
+
+#### V2版本支持Cobalt Strike、MSF原生Shellcode，无需任何处理即可直接使用，指令：
 
 > -o string：选中payload，向同级目录生成一个可执行程序（无需go语言环境）
 >
@@ -14,7 +26,7 @@
 
 ![v2](images/v2.png)
 
-####  本次更新采用闭源方式，V1版本继续开源。相比较移除了原本的ShellCode loader功能，只保留了生成模块。此版本进行功能优化之后可能成为最终解决方案，但是免杀之路不会停止，新ZheTian将与[Hearts K](http://heartsk.com/)合并，成为其一个子模块，欢迎继续体验新项目！感谢各位师傅一路关注。 —— 遮天项目
+####  本次更新采用~~闭源方式~~ 已开源，V1版本继续开源。相比较移除了原本的ShellCode loader功能，只保留了生成模块。此版本进行功能优化之后可能成为最终解决方案，但是免杀之路不会停止，新ZheTian将与[Hearts K](http://heartsk.com/)合并，成为其一个子模块，欢迎继续体验新项目！感谢各位师傅一路关注。 —— 遮天项目
 
 ----
 
