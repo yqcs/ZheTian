@@ -35,6 +35,6 @@
 
 ### [点击加入：528118163](https://jq.qq.com/?_wv=1027&k=azWZhmSy)
 
-## 加群 / 合作 / 联系（左） | 公众号：遮天实验室（右）
+## 加群 / 联系（左） |  公众号：遮天实验室（右）
 
 <img src="https://heartsk.com/static/wx.jpg" width="200"><img src="images/wxgzh.jpg" width="200">
