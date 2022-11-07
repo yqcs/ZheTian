@@ -11,12 +11,12 @@
 >
 > ### 2.x： Bypass all（需修改下代码里的敏感特征）、可生成指定架构程序
 >
-> ### 3.x： 新增Bypass UAC、用户创建、智能反沙箱
+> ### 3.x： 新增Bypass UAC、用户创建、智能反沙箱（BUG已修复）
 
 ## 项目请移步至v1、v2、v3目录
 
 ## 效果：仅能检测到流量特征，Bypass All Anti-Virus.
-
+### 动态免杀请替换默认证书，使用SSL加密流量即可。
 ![logo](images/v2xg.png)
 
 ## 扩展：Windows defender
