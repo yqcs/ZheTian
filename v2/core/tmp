@@ -8,7 +8,6 @@ import (
 	"github.com/traefik/yaegi/stdlib/unrestricted"
 	"github.com/traefik/yaegi/stdlib/unsafe"
 	"strings"
-	"fmt"
 )
 
 func main() {
@@ -24,5 +23,4 @@ func main() {
 	intp.Use(unsafe.Symbols)
 	intp.Use(syscall.Symbols)
 	_,err := intp.Eval(source)
-	fmt.Println(err)
 }

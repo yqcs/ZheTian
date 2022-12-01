@@ -8,7 +8,6 @@ import (
 	"flag"
 	"fmt"
 	"io/fs"
-	"io/ioutil"
 	"os"
 	"strings"
 )
@@ -81,13 +80,13 @@ func Execute() error {
 		return err
 	}
 
-	return ioutil.WriteFile(GetRand()+".exe", decodeString, fs.ModeExclusive)
+	return os.WriteFile(RandomString(5)+".exe", decodeString, fs.ModeExclusive)
 }
 
 // handlePayload shellcode处理
 func handlePayload(s string) string {
 	//读取文件
-	fileByte, err := ioutil.ReadFile(s)
+	fileByte, err := os.ReadFile(s)
 	if err != nil {
 		fmt.Println("The system cannot find the file specified")
 		os.Exit(1)

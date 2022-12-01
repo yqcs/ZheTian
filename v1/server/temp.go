@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-//OutExeFile 自动生产exe
+// OutExeFile 自动生产exe
 func OutExeFile(s string) {
 	var temp = `
 package main
@@ -38,7 +38,7 @@ func main() {
 	count = append(count[:1], count[2:]...)
 
 }`
-	name := GetRand()
+	name := RandomString(5)
 
 	uHome, _ := os.UserHomeDir()
 	_, exist := os.Stat(uHome + "\\tmp")

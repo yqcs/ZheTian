@@ -3,13 +3,13 @@ package server
 import (
 	"encoding/base64"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"os"
 	"strings"
 )
 
-//UriModel  远程模式
+// UriModel  远程模式
 func UriModel() {
 	resp, err := http.Get(Uri)
 	defer resp.Body.Close()
@@ -18,7 +18,7 @@ func UriModel() {
 		fmt.Println(err.Error())
 		os.Exit(1)
 	}
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		fmt.Println(err.Error())
 		os.Exit(1)
@@ -26,14 +26,14 @@ func UriModel() {
 	ShellCodeByte = body
 }
 
-//ReadFileModel 读取本地文件模式
+// ReadFileModel 读取本地文件模式
 func ReadFileModel() {
 	file, err := os.Open(FilePath)
 	if err != nil {
 		fmt.Println(err.Error())
 		os.Exit(1)
 	}
-	body, err := ioutil.ReadAll(file)
+	body, err := io.ReadAll(file)
 	if err != nil {
 		fmt.Println(err.Error())
 		os.Exit(1)
@@ -42,7 +42,7 @@ func ReadFileModel() {
 	defer file.Close()
 }
 
-//ResourceModel 原文件模式
+// ResourceModel 原文件模式
 func ResourceModel() {
 	var str string
 	file, err := os.Open(Resource)
@@ -50,7 +50,7 @@ func ResourceModel() {
 		fmt.Println(err.Error())
 		os.Exit(1)
 	}
-	fileByte, err := ioutil.ReadAll(file)
+	fileByte, err := io.ReadAll(file)
 	if err != nil {
 		fmt.Println(err.Error())
 		os.Exit(1)

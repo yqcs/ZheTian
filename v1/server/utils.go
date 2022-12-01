@@ -1,14 +1,29 @@
 package server
 
 import (
-	"github.com/ser163/WordBot/generate"
+	"math/rand"
+	"time"
 )
 
-//GetRand 获取随机数
-func GetRand() string {
-	gxa, err := generate.GenRandomWorld(5, "mix")
-	if err != nil {
-		return "ZheTian"
+func RandomString(n int) string {
+	randSource := rand.New(rand.NewSource(time.Now().Unix()))
+	const (
+		letterIdxBits = 6
+		letterIdxMask = 1<<letterIdxBits - 1
+		letterIdxMax  = 63 / letterIdxBits
+		letterBytes   = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	)
+	randBytes := make([]byte, n)
+	for i, cache, remain := n-1, randSource.Int63(), letterIdxMax; i >= 0; {
+		if remain == 0 {
+			cache, remain = randSource.Int63(), letterIdxMax
+		}
+		if idx := int(cache & letterIdxMask); idx < len(letterBytes) {
+			randBytes[i] = letterBytes[idx]
+			i--
+		}
+		cache >>= letterIdxBits
+		remain--
 	}
-	return gxa.Word
+	return string(randBytes)
 }
